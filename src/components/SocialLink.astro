@@ -1,0 +1,25 @@
+---
+export interface Props {
+    link: { name: string; url: string; icon: string; username: string };
+}
+
+const { link } = Astro.props as Props;
+const { username, icon, name, url } = link;
+---
+
+<a
+    href={url}
+    target="_blank"
+    title={username}
+    rel="noopener noreferrer"
+    class="flex justify-center items-center px-5 gap-3 p-3 min-w-[250px] bg-white/10 backdrop-blur rounded-xl hover:bg-white/20 transition duration-300"
+>
+    <img src={icon} class="w-6 h-6" />
+    <span class="w-full text-lg text-white">
+        <span>₊⊹♡</span>
+        <span class="font-semibold">
+            {name}
+        </span>
+        <span>-`♡´-</span>
+    </span>
+</a>

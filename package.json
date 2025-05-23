@@ -1,0 +1,29 @@
+{
+    "name": "chadry-link-tree",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/react": "4.2.5",
+        "@astrojs/tailwind": "6.0.2",
+        "astro": "5.7.7",
+        "tailwindcss": "3.4.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "9.24.0",
+        "@types/eslint": "9.6.1",
+        "prettier-plugin-astro": "0.12.2",
+        "@typescript-eslint/eslint-plugin": "8.30.0",
+        "@typescript-eslint/parser": "8.30.0",
+        "eslint": "9.24.0",
+        "eslint-config-prettier": "10.1.2",
+        "globals": "16.0.0",
+        "prettier": "3.5.3",
+        "typescript-eslint": "8.30.0"
+    }
+}

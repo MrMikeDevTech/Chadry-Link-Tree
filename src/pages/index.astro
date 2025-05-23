@@ -1,0 +1,72 @@
+---
+import SocialList from "../components/SocialList.astro";
+---
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg" href="/favicon.svg" />
+        <title>♡ Chadry Link Tree ♡</title>
+        <script type="module">
+            window.addEventListener("DOMContentLoaded", () => {
+                const audio = new Audio("/music/background.mp3");
+                audio.loop = true;
+                audio.volume = 0.3;
+                audio.muted = true;
+
+                audio.play().then(() => {
+                    const unmute = () => {
+                        audio.muted = false;
+                        window.removeEventListener("click", unmute);
+                        window.removeEventListener("keydown", unmute);
+                    };
+                    window.addEventListener("click", unmute);
+                    window.addEventListener("keydown", unmute);
+                });
+
+                const toggleButton = document.getElementById("music-toggle");
+                let paused = false;
+
+                toggleButton.addEventListener("click", () => {
+                    if (paused) {
+                        audio.play();
+                        toggleButton.textContent = "🔊";
+                    } else {
+                        audio.pause();
+                        toggleButton.textContent = "🔇";
+                    }
+                    paused = !paused;
+                });
+            });
+        </script>
+    </head>
+    <body
+        class="relative min-h-screen flex
+            items-center justify-center bg-black text-white overflow-hidden"
+    >
+        <video
+            autoplay
+            muted
+            loop
+            class="absolute w-full h-full object-cover blur-sm
+            opacity-30 z-0"
+        >
+            <source src="src/assets/backgrounds/top-background.mp4" type="video/mp4" />
+        </video>
+        <main class="flex flex-col gap-20 relative z-10 p-6 w-full text-center">
+            <h1 class="text-3xl md:text-4xl font-bold mb-6 inline-block">
+                <span>˖⁺‧₊˚ ♡ ˚₊‧⁺˖</span>
+                <span>Mis links</span>
+                <span>˖⁺‧₊˚ ♡ ˚₊‧⁺˖</span>
+            </h1>
+            <SocialList />
+        </main>
+        <button
+            id="music-toggle"
+            class="fixed bottom-4 right-4 z-20 bg-white/10 hover:bg-white/20 backdrop-blur text-white px-4 py-2 rounded-full transition"
+        >
+            🔊
+        </button>
+    </body>
+</html>

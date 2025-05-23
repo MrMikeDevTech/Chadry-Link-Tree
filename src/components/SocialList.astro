@@ -1,0 +1,8 @@
+---
+import { socialLinks } from "../data/links";
+import SocialLink from "./SocialLink.astro";
+---
+
+<div class="flex flex-col gap-4 items-center">
+    {socialLinks.map((link) => <SocialLink {link} />)}
+</div>
