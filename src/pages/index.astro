@@ -25,7 +25,6 @@ import SocialList from "../components/SocialList.astro";
 
                 const enableAudio = () => {
                     audio.muted = false;
-                    // Reproducir si está pausado
                     if (audio.paused) {
                         audio.play().catch((err) => {
                             console.warn("Error al reintentar reproducir:", err);
@@ -44,10 +43,10 @@ import SocialList from "../components/SocialList.astro";
                     toggleButton.addEventListener("click", () => {
                         if (paused) {
                             audio.play().catch(console.error);
-                            toggleButton.textContent = "🔊";
+                            toggleButton.textContent = "▶️";
                         } else {
                             audio.pause();
-                            toggleButton.textContent = "🔇";
+                            toggleButton.textContent = "⏸️";
                         }
                         paused = !paused;
                     });
@@ -80,7 +79,7 @@ import SocialList from "../components/SocialList.astro";
             id="music-toggle"
             class="fixed bottom-4 right-4 z-20 bg-white/10 hover:bg-white/20 backdrop-blur text-white px-4 py-2 rounded-full transition"
         >
-            🔊
+            ▶️
         </button>
     </body>
 </html>
