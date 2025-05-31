@@ -1,9 +1,9 @@
 export const socialLinks = [
     {
         name: "Instagram",
-        url: "https://www.instagram.com/chadry_nasa",
+        url: "https://www.instagram.com/cinnamon.chadry",
         icon: "/icons/instagram.svg",
-        username: "chadry_nasa"
+        username: "cinnamon.chadry"
     },
     {
         name: "X",
@@ -24,8 +24,8 @@ export const socialLinks = [
         username: "Adriana Pedroza"
     },
     {
-        name: "Discord",
-        url: "https://discord.com/users/689884920130437218",
+        name: "Mi server de Discord",
+        url: "https://discord.gg/sWvpBmSM",
         icon: "/icons/discord.svg",
         username: "chadryuwuofficial"
     },
